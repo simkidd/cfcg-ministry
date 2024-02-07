@@ -19,3 +19,27 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../utils/constants.ts";
   <Sponsor />
   <Contact />
 </MainLayout>
+
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+
+<script
+  is:inline
+  src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <script is:inline>
+    new Swiper(".swiper", {
+      loop: true,
+      // grabCursor: true,
+      // centeredSlides: true,
+      slidesPerView: "auto",
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+    });
+
+    console.log("swiper working")
+  </script>

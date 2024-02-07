@@ -1,5 +1,6 @@
 ---
-
+import { Icon } from "astro-icon/components";
+import { bibleVerses } from "../data/verses.data";
 ---
 
 <div
@@ -9,27 +10,29 @@
   <div class="container">
     <div class="qoute__slider overflow-hidden">
       <div class="swiper-wrapper">
-        <div class="swiper-slide">
-          <div class="qoute__item">
-            <div class="qoute__inner align-items-center">
-              <div class="qoute__thumb">
-                <h4>Quote From</h4>
-                <span>Prophat</span>
-                <i class="fas fa-quote-left"></i>
-              </div>
-              <div class="qoute__content">
-                <blockquote class="qoute__content-blockquote">
-                  <p>
-                    Hazrat Mohammod (s) Said "It is Better For Any Of You To
-                    Carry A Load Of Firewood On His Own Back Than To Beg From
-                    Someone Else"
-                  </p>
-                  <h4>Riyadh-Us-Saleheen, Chapter 59, hadith 540</h4>
-                </blockquote>
+        {
+          bibleVerses.map(({ book, chapter, verse, text }) => (
+            <div class="swiper-slide">
+              <div class="qoute__item">
+                <div class="qoute__inner align-items-center">
+                  <div class="qoute__thumb">
+                    <h4>Bible</h4>
+                    <span>Verses</span>
+                    <Icon name="mdi:format-quote-open" class="text-white " />
+                  </div>
+                  <div class="qoute__content">
+                    <blockquote class="qoute__content-blockquote">
+                      <p>{text}</p>
+                      <h4>
+                        {book} {chapter} : {verse}
+                      </h4>
+                    </blockquote>
+                  </div>
+                </div>
               </div>
             </div>
-          </div>
-        </div>
+          ))
+        }
       </div>
     </div>
   </div>

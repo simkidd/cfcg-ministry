@@ -1,0 +1,146 @@
+---
+import { Icon } from "astro-icon/components";
+import { Image } from "astro:assets";
+import Logo from "../assets/images/cfcgm-logo.png";
+---
+
+<header class="header">
+  <div class="navbar-expand-xl">
+    <div class="collapse navbar-collapse" id="menubar2">
+      <div class="header__top w-100">
+        <div class="container">
+          <div class="header__top-area">
+            <div class="header__top-left col-4">
+              <ul>
+                <li>
+                  <a href="tel:+2348125884223">
+                    <Icon size={18} name="mdi:phone" class="me-2" />
+                    +234 812 588 4223
+                  </a>
+                </li>
+                <li>
+                  <a href="mailto:campaignforchristglobal@gmail.com">
+                    <Icon size={18} name="mdi:envelope" class="me-2" />
+                    campaignforchristglobal@gmail.com
+                  </a>
+                </li>
+              </ul>
+            </div>
+            <div class="header__top-center col-4">
+              <div class="header__top-logo d-none d-md-flex justify-content-center ">
+                <a href="index.html">
+                  <Image src={Logo} alt="logo" width={100} height={100} />
+                </a>
+              </div>
+            </div>
+            <div class="header__top-right col-4">
+              <div class="header__top-socialsearch">
+                <div class="header__top-social ms-md-auto ">
+                  <ul>
+                    <li>
+                      <a href="#">
+                        <Icon size={18} name="mdi:facebook" class="me-2" />
+                      </a>
+                    </li>
+                    <li>
+                      <a href="#">
+                        <Icon size={18} name="mdi:twitter" class="me-2" />
+                      </a>
+                    </li>
+                  </ul>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <div class="header__bottom">
+      <div class="container">
+        <div class="header__mainmenu navbar navbar-expand-xl navbar-light">
+          <div class="header__logo">
+            <a href="index.html" class="d-none d-xl-block"
+              ><img src="assets/images/logo/02.png" alt="logo" /></a
+            >
+            <a href="index.html" class="d-xl-none"
+              ><img src="assets/images/logo/01.png" alt="logo" /></a
+            >
+          </div>
+          <div class="header__bar">
+            <button
+              class="navbar-toggler"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#menubar"
+              aria-controls="menubar"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <Icon name="mdi:hamburger" />
+            </button>
+            <button
+              class="navbar-toggler header__bar-info"
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#menubar2"
+              aria-controls="menubar2"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <Icon name="mdi:info" />
+            </button>
+          </div>
+          <div class="header__menu navbar-expand-xl">
+            <div class="collapse navbar-collapse" id="menubar">
+              <ul>
+                <li class="active">
+                  <a href="#0">Home</a>
+                </li>
+                <li>
+                  <a href="#0">Events</a>
+                  <ul>
+                    <li><a href="event.html">Event Two Column</a></li>
+                    <li><a href="event-2.html">Event Three Column</a></li>
+                    <li><a href="event-single.html">Event Single</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#0">Gallery</a>
+                  <ul>
+                    <li><a href="gallery.html">Gallery Default</a></li>
+                    <li><a href="gallery-2.html">Gallery 4 Columns</a></li>
+                    <li><a href="gallery-3.html">Gallery 6 Columns</a></li>
+                  </ul>
+                </li>
+                <li>
+                  <a href="#0">Sermons</a>
+                  <ul>
+                    <li><a href="sermon.html">Sermons 2 Columns</a></li>
+                    <li><a href="sermon-single.html">Sermons Single</a></li>
+                  </ul>
+                </li>
+                <li><a href="contact.html">Contact Us</a></li>
+              </ul>
+              <a href="cause-single.html" class="default-btn"
+                ><span>Donate Now <i class="fas fa-heart"></i></span></a
+              >
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</header>
+
+<!-- <style lang="scss">
+  .header__top-area{
+      display: grid;
+      
+    .header__top-left,
+    .header__top-center,
+    .header__top-right{
+      width:100%;
+    }
+  }
+</style> -->

@@ -1,0 +1,31 @@
+---
+import BaseHead from "../components/BaseHead.astro";
+import Footer from "../components/Footer.astro";
+import Header from "../components/Header.astro";
+import HeaderSearch from "../components/HeaderSearch.astro";
+
+interface Props {
+  title: string;
+  description: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <BaseHead title={title} description={description} />
+  </head>
+  <body>
+    <HeaderSearch />
+    <Header />
+    <main>
+      <slot />
+    </main>
+    <Footer />
+    <script>
+      import 'bootstrap/dist/js/bootstrap.bundle.min.js'
+    </script>
+  </body>
+</html>

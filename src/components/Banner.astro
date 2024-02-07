@@ -1,0 +1,187 @@
+---
+import {getImage} from "astro:assets";
+import Banner1 from "../assets/images/banner/01.jpg";
+import Banner2 from "../assets/images/banner/02.jpg";
+import Banner3 from "../assets/images/banner/03.jpg";
+
+const optBgImage1 = await getImage({ src: Banner1 });
+const optBgImage2 = await getImage({ src: Banner2 });
+const optBgImage3 = await getImage({ src: Banner3 });
+---
+
+<div class="banner__slider slider banner-style2 overflow-hidden">
+  <div class="swiper-wrapper">
+    <div class="swiper-slide">
+      <div
+        class="banner"
+        style={`background-image: url('${optBgImage1.src}')`}
+      >
+        <div class="container">
+          <div class="banner__content ms-lg-auto">
+            <h2>We Believe In Huminity</h2>
+            <p>
+              Enthusiastically underwhelm quality benefits rather than
+              professional "outside the box" thinking. Distinctively network
+              highly efficient leadership skills
+            </p>
+            <a href="#" class="default-btn move-right"
+              ><span>GET HELP NOW</span></a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="swiper-slide">
+      <div
+        class="banner"
+        style={`background-image: url('${optBgImage2.src}')`}
+      >
+        <div class="container">
+          <div class="banner__content">
+            <h2>A Powerful Religion Theme</h2>
+            <p>
+              Enthusiastically underwhelm quality benefits rather than
+              professional "outside the box" thinking. Distinctively network
+              highly efficient leadership skills
+            </p>
+            <a href="#" class="default-btn move-right"
+              ><span>GET HELP NOW</span></a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="swiper-slide">
+      <div
+        class="banner"
+        style={`background-image: url('${optBgImage3.src}')`}
+      >
+        <div class="container">
+          <div class="banner__content ms-lg-auto">
+            <h2>It"S Useless To Lecture</h2>
+            <p>
+              Enthusiastically underwhelm quality benefits rather than
+              professional "outside the box" thinking. Distinctively network
+              highly efficient leadership skills
+            </p>
+            <a href="#" class="default-btn move-right"
+              ><span>GET HELP NOW</span></a
+            >
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+
+<!-- <style lang="scss">
+  p {
+    color: var(--text-color);
+  }
+  .swiper {
+    width: 100%;
+    margin-top: 60px;
+    @media screen and (min-width: 768px) {
+      margin-top: 80px;
+      width: 70%;
+    }
+    .swiper-wrapper {
+      .swiper-slide {
+        background: #fff;
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        padding-bottom: 4rem;
+        .img-wrap {
+          width: 150px;
+          height: 150px;
+          overflow: hidden;
+          border-radius: 50%;
+          margin-bottom: 2.1rem;
+          img {
+            width: 100%;
+            height: 100%;
+            object-fit: cover;
+          }
+        }
+        .author {
+          font-size: 16px;
+          font-weight: 800;
+          line-height: normal;
+          letter-spacing: 0.32px;
+          margin-bottom: 0;
+        }
+        .role {
+          font-size: 14px;
+          font-weight: 500;
+          line-height: normal;
+          letter-spacing: 0.28px;
+          margin-bottom: 2rem;
+        }
+        .text-content {
+          text-align: center;
+          font-size: 14px;
+          font-weight: 400;
+          line-height: 29.7px;
+          letter-spacing: 0.4px;
+          max-width: 680px;
+          @media screen and (min-width: 768px) {
+            font-size: 16px;
+          }
+        }
+      }
+    }
+
+    .swiper-button-prev,
+    .swiper-button-next {
+      color: var(--green);
+      background: #167e2742;
+      border-radius: 50%;
+      width: 40px;
+      height: 40px;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      bottom: 0;
+      top: auto;
+      &::after {
+        font-size: 16px;
+      }
+    }
+    .swiper-button-prev {
+      left: 30%;
+      @media screen and (min-width: 768px) {
+        left: 40%;
+      }
+    }
+    .swiper-button-next {
+      right: 30%;
+      @media screen and (min-width: 768px) {
+        right: 40%;
+      }
+    }
+  }
+</style> -->
+
+<link
+  rel="stylesheet"
+  href="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.css"
+/>
+
+<script
+  is:inline
+  src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
+
+  <script is:inline>
+    new Swiper(".swiper", {
+      loop: true,
+      effect: "creative",
+      grabCursor: true,
+      centeredSlides: true,
+      slidesPerView: "auto",
+      autoplay: {
+        delay: 3000,
+        disableOnInteraction: false,
+      },
+    });
+  </script>

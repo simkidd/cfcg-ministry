@@ -1,0 +1,56 @@
+---
+import 'bootstrap/dist/css/bootstrap.css'
+import "../styles/style.scss";
+
+interface Props {
+  title: string;
+  description: string;
+  image?: string;
+}
+
+const { title, description } = Astro.props;
+---
+
+<!-- Global Metadata -->
+<meta charset="utf-8" />
+<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
+<meta name="viewport" content="width=device-width" />
+<meta name="generator" content={Astro.generator} />
+
+<!-- Primary Meta Tags -->
+<title>{title}</title>
+<meta name="title" content={title} />
+<meta name="description" content={description} />
+
+<!-- custom styles -->
+<!-- <link rel="stylesheet" href="../assets/css/bootstrap.min.css"> -->
+<!-- <link rel="stylesheet" href="../assets/css/animate.css" /> -->
+<!-- <link rel="stylesheet" href="../styles/all.min.css" /> -->
+<!-- <link rel="stylesheet" href="../assets/css/swiper.min.css" /> -->
+<!-- <link rel="stylesheet" href="../assets/css/lightcase.css" /> -->
+
+<!-- main css for template -->
+<!-- <link rel="stylesheet" href="../assets/css/style.min.css" /> -->
+
+<!-- Font preloads -->
+<!-- <link
+  rel="preload"
+  href="/fonts/lightcaseeead.woff"
+  as="font"
+  type="font/woff"
+  crossorigin
+/>
+<link
+  rel="preload"
+  href="/fonts/lightcaseeead.ttf"
+  as="font"
+  type="font/ttf"
+  crossorigin
+/>
+<link
+  rel="preload"
+  href="/fonts/lightcaseeead.eot"
+  as="font"
+  type="font/eot"
+  crossorigin
+/> -->

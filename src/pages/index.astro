@@ -2,12 +2,13 @@
 import About from "../components/About.astro";
 import Banner from "../components/Banner.astro";
 import Contact from "../components/Contact.astro";
+import Events from "../components/Events.astro";
+import Gallery from "../components/Gallery.astro";
 import Preloader from "../components/Preloader.astro";
 import Quote from "../components/Quote.astro";
-import Sponsor from "../components/Sponsor.astro";
 import UpcomingEvent from "../components/UpcomingEvent.astro";
 import MainLayout from "../layouts/MainLayout.astro";
-import { SITE_TITLE, SITE_DESCRIPTION } from "../utils/constants.ts";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../utils/constants.ts";
 ---
 
 <MainLayout title={SITE_TITLE} description={SITE_DESCRIPTION}>
@@ -15,8 +16,9 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../utils/constants.ts";
   <Banner />
   <UpcomingEvent />
   <About />
+  <Gallery />
+  <Events />
   <Quote />
-  <Sponsor />
   <Contact />
 </MainLayout>
 
@@ -29,17 +31,17 @@ import { SITE_TITLE, SITE_DESCRIPTION } from "../utils/constants.ts";
   is:inline
   src="https://cdn.jsdelivr.net/npm/swiper@11/swiper-bundle.min.js"></script>
 
-  <script is:inline>
-    new Swiper(".swiper", {
-      loop: true,
-      // grabCursor: true,
-      // centeredSlides: true,
-      slidesPerView: "auto",
-      autoplay: {
-        delay: 3000,
-        disableOnInteraction: false,
-      },
-    });
+<script is:inline>
+  new Swiper(".swiper", {
+    loop: true,
+    // grabCursor: true,
+    // centeredSlides: true,
+    slidesPerView: "auto",
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false,
+    },
+  });
 
-    console.log("swiper working")
-  </script>
+  console.log("swiper working");
+</script>

@@ -1,0 +1,87 @@
+---
+import { events } from "../data/events.data";
+---
+
+<div class="event padding--top padding--bottom">
+  <div class="container">
+    <div class="section__header text-center">
+      <h2>Recent Event</h2>
+      <p>
+        Enthusiastically underwhelm quality benefits rather than professional
+        outside the box thinking. Distinctively network highly efficient
+        leadership skills
+      </p>
+    </div>
+    <div class="section__wrapper">
+      <div class="row g-4 justify-content-center">
+        {
+          events.map(({ title, image, time, venue, content }) => (
+            <div class="col-lg-4 col-sm-6 col-12">
+              <div class="event__item">
+                <div class="event__inner">
+                  <div class="event__thumb">
+                    <div class="">
+                      <img src={image} alt={title} />
+                    </div>
+                    <div class="event__thumb-date">
+                      <h6>09</h6>
+                      <p>Nov</p>
+                    </div>
+                  </div>
+                  <div class="event__content">
+                    <div class="">
+                      <h5>Open Rededication</h5>
+                    </div>
+                    <div class="event__metapost">
+                      <ul class="event__metapost-info">
+                        <li>
+                          <i class="far fa-clock" /> 10am - 12pm
+                        </li>
+                        <li>
+                          <i class="fas fa-map-marker-alt" /> PO Box 16122,
+                          Collins Street
+                        </li>
+                      </ul>
+                      <ul class="event__metapost-comentshare">
+                        <li class="event__metapost-share">
+                          <i class="fas fa-share-alt" />
+                          <ul>
+                            <li>
+                              <a href="#">
+                                <i class="fab fa-facebook-f" />
+                              </a>
+                            </li>
+                            <li>
+                              <a href="#">
+                                <i class="fab fa-twitter" />
+                              </a>
+                            </li>
+                            <li>
+                              <a href="#">
+                                <i class="fab fa-linkedin-in" />
+                              </a>
+                            </li>
+                            <li>
+                              <a href="#">
+                                <i class="fab fa-dribbble" />
+                              </a>
+                            </li>
+                          </ul>
+                        </li>
+                      </ul>
+                    </div>
+                    <p>
+                      Lorem ipsum dolor sit amet, consectetur adipisicing elit,
+                      sed do eiusmod tempor incididunt ut labore consectetur
+                      adipisicing elit
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          ))
+        }
+      </div>
+    </div>
+  </div>
+</div>

@@ -2,6 +2,20 @@
 import { Icon } from "astro-icon/components";
 import { Image } from "astro:assets";
 import Logo from "../assets/images/cfcgm-logo.png";
+import HeaderLink from "./HeaderLink.astro";
+
+interface Menu {
+  name: string;
+  href: string;
+}
+
+const navlist: Menu[] = [
+  { name: "Home", href: "/" },
+  { name: "Events", href: "/#events" },
+  { name: "Gallery", href: "/#gallery" },
+  { name: "Sermons", href: "/#sermons" },
+  { name: "Contact Us", href: "/#contact-us" },
+];
 ---
 
 <header class="header">
@@ -100,33 +114,13 @@ import Logo from "../assets/images/cfcgm-logo.png";
           <div class="header__menu navbar-expand-xl">
             <div class="collapse navbar-collapse" id="menubar">
               <ul>
-                <li class="active">
-                  <a href="#0">Home</a>
-                </li>
-                <li>
-                  <a href="#0">Events</a>
-                  <ul>
-                    <li><a href="event.html">Event Two Column</a></li>
-                    <li><a href="event-2.html">Event Three Column</a></li>
-                    <li><a href="event-single.html">Event Single</a></li>
-                  </ul>
-                </li>
-                <li>
-                  <a href="#0">Gallery</a>
-                  <ul>
-                    <li><a href="gallery.html">Gallery Default</a></li>
-                    <li><a href="gallery-2.html">Gallery 4 Columns</a></li>
-                    <li><a href="gallery-3.html">Gallery 6 Columns</a></li>
-                  </ul>
-                </li>
-                <li>
-                  <a href="#0">Sermons</a>
-                  <ul>
-                    <li><a href="sermon.html">Sermons 2 Columns</a></li>
-                    <li><a href="sermon-single.html">Sermons Single</a></li>
-                  </ul>
-                </li>
-                <li><a href="#contact-us">Contact Us</a></li>
+                {
+                  navlist.map(({ name, href }) => (
+                    <li>
+                      <HeaderLink href={href}>{name}</HeaderLink>
+                    </li>
+                  ))
+                }
               </ul>
               <a href="cause-single.html" class="default-btn">
                 <span>
@@ -143,7 +137,13 @@ import Logo from "../assets/images/cfcgm-logo.png";
 </header>
 
 <style lang="scss">
-  .logo-wrap{
+  .active {
+    @media screen and (min-width: 768px) {
+      text-decoration: none !important;
+      color: #0c5bcd;
+    }
+  }
+  .logo-wrap {
     width: 50px;
     height: 50px;
     border-radius: 50%;

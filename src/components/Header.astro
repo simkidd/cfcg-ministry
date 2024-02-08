@@ -12,8 +12,8 @@ interface Menu {
 const navlist: Menu[] = [
   { name: "Home", href: "/" },
   { name: "Events", href: "/#events" },
-  { name: "Gallery", href: "/#gallery" },
-  { name: "Sermons", href: "/#sermons" },
+  { name: "Gallery", href: "/gallery" },
+  // { name: "Sermons", href: "/#sermons" },
   { name: "Contact Us", href: "/#contact-us" },
 ];
 ---
@@ -52,15 +52,15 @@ const navlist: Menu[] = [
             <div class="header__top-right col-4">
               <div class="header__top-socialsearch">
                 <div class="header__top-social ms-md-auto">
-                  <ul>
+                  <ul class="gap-2">
                     <li>
                       <a href="#">
-                        <Icon size={18} name="mdi:facebook" class="me-2" />
+                        <Icon size={18} name="ri:facebook-fill" class="me-2" />
                       </a>
                     </li>
                     <li>
                       <a href="#">
-                        <Icon size={18} name="mdi:twitter" class="me-2" />
+                        <Icon size={18} name="ri:twitter-x-fill" class="me-2" />
                       </a>
                     </li>
                   </ul>
@@ -79,28 +79,17 @@ const navlist: Menu[] = [
             <div
               class="logo-wrap bg-white d-flex align-items-center justify-content-center"
             >
-              <a href="index.html" class="d-none d-xl-block">
+              <a href="/" class="d-none d-xl-block">
                 <Image src={Logo} alt="logo" height={40} />
               </a>
-              <a href="index.html" class="d-xl-none">
+              <a href="/" class="d-xl-none">
                 <Image src={Logo} alt="logo" height={40} />
               </a>
             </div>
           </div>
-          <div class="header__bar">
+          <div class="header__bar ">
             <button
-              class="navbar-toggler"
-              type="button"
-              data-bs-toggle="collapse"
-              data-bs-target="#menubar"
-              aria-controls="menubar"
-              aria-expanded="false"
-              aria-label="Toggle navigation"
-            >
-              <Icon name="mdi:hamburger" />
-            </button>
-            <button
-              class="navbar-toggler header__bar-info"
+              class="navbar-toggler text-white border-0 "
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#menubar2"
@@ -108,7 +97,18 @@ const navlist: Menu[] = [
               aria-expanded="false"
               aria-label="Toggle navigation"
             >
-              <Icon name="mdi:info" />
+              <Icon name="heroicons:information-circle" size={28} />
+            </button>
+            <button
+              class="navbar-toggler text-white border-white "
+              type="button"
+              data-bs-toggle="collapse"
+              data-bs-target="#menubar"
+              aria-controls="menubar"
+              aria-expanded="false"
+              aria-label="Toggle navigation"
+            >
+              <Icon name="heroicons:bars-3-bottom-left-16-solid" size={28} />
             </button>
           </div>
           <div class="header__menu navbar-expand-xl">
@@ -122,7 +122,7 @@ const navlist: Menu[] = [
                   ))
                 }
               </ul>
-              <a href="cause-single.html" class="default-btn">
+              <a href="#" class="default-btn">
                 <span>
                   Donate Now
                   <Icon name="mdi:heart" />

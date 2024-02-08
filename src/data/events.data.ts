@@ -1,12 +1,28 @@
+import Photo1 from "../assets/images/gallery/WhatsApp Image 2024-02-07 at 10.23.04.jpeg";
+import Photo2 from "../assets/images/gallery/WhatsApp Image 2024-02-07 at 10.23.12.jpeg";
+import Photo3 from "../assets/images/gallery/WhatsApp Image 2024-02-07 at 10.22.52.jpeg";
+
+
 export const events = [
   {
-    title: "",
+    title: "First Event",
     time: "",
     venue: "",
-    image:
-      "../assets/images/gallery/WhatsApp Image 2024-02-07 at 10.23.14.jpeg",
+    image: Photo1.src,
     content: "",
   },
-  { title: "", time: "", venue: "", image: "", content: "" },
-  { title: "", time: "", venue: "", image: "", content: "" },
+  {
+    title: "First Event",
+    time: "",
+    venue: "",
+    image: Photo2.src,
+    content: "",
+  },
+  {
+    title: "First Event",
+    time: "",
+    venue: "",
+    image: Photo3.src,
+    content: "",
+  },
 ];

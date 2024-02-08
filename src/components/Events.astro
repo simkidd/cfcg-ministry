@@ -1,5 +1,7 @@
 ---
+import { Image } from "astro:assets";
 import { events } from "../data/events.data";
+import { Icon } from "astro-icon/components";
 ---
 
 <div class="event padding--top padding--bottom">
@@ -15,73 +17,59 @@ import { events } from "../data/events.data";
     <div class="section__wrapper">
       <div class="row g-4 justify-content-center">
         {
-          events.map(({ title, image, time, venue, content }) => (
-            <div class="col-lg-4 col-sm-6 col-12">
-              <div class="event__item">
-                <div class="event__inner">
-                  <div class="event__thumb">
-                    <div class="">
-                      <img src={image} alt={title} />
+          events.map(({ title, image, time, venue, content }) => {
+            return (
+              <div class="col-lg-4 col-sm-6 col-12">
+                <div class="event__item">
+                  <div class="event__inner">
+                    <div class="event__thumb">
+                      <div class="image-wrapper">
+                        <img src={image} alt={title} />
+                      </div>
+                      <div class="event__thumb-date">
+                        <h6>09</h6>
+                        <p>Nov</p>
+                      </div>
                     </div>
-                    <div class="event__thumb-date">
-                      <h6>09</h6>
-                      <p>Nov</p>
+                    <div class="event__content">
+                      <div class="">
+                        <h5>{title}</h5>
+                      </div>
+                      <div class="event__metapost">
+                        <ul class="event__metapost-info">
+                          <li>
+                            <Icon name="mdi:clock" /> 10am - 12pm
+                          </li>
+                          <li>
+                            <Icon name="mdi:map-marker" /> PO Box 16122,
+                            Collins Street
+                          </li>
+                        </ul>
+                      </div>
+                      <p>
+                        Lorem ipsum dolor sit amet, consectetur adipisicing
+                        elit, sed do eiusmod tempor incididunt ut labore
+                        consectetur adipisicing elit
+                      </p>
                     </div>
-                  </div>
-                  <div class="event__content">
-                    <div class="">
-                      <h5>Open Rededication</h5>
-                    </div>
-                    <div class="event__metapost">
-                      <ul class="event__metapost-info">
-                        <li>
-                          <i class="far fa-clock" /> 10am - 12pm
-                        </li>
-                        <li>
-                          <i class="fas fa-map-marker-alt" /> PO Box 16122,
-                          Collins Street
-                        </li>
-                      </ul>
-                      <ul class="event__metapost-comentshare">
-                        <li class="event__metapost-share">
-                          <i class="fas fa-share-alt" />
-                          <ul>
-                            <li>
-                              <a href="#">
-                                <i class="fab fa-facebook-f" />
-                              </a>
-                            </li>
-                            <li>
-                              <a href="#">
-                                <i class="fab fa-twitter" />
-                              </a>
-                            </li>
-                            <li>
-                              <a href="#">
-                                <i class="fab fa-linkedin-in" />
-                              </a>
-                            </li>
-                            <li>
-                              <a href="#">
-                                <i class="fab fa-dribbble" />
-                              </a>
-                            </li>
-                          </ul>
-                        </li>
-                      </ul>
-                    </div>
-                    <p>
-                      Lorem ipsum dolor sit amet, consectetur adipisicing elit,
-                      sed do eiusmod tempor incididunt ut labore consectetur
-                      adipisicing elit
-                    </p>
                   </div>
                 </div>
               </div>
-            </div>
-          ))
+            );
+          })
         }
       </div>
     </div>
   </div>
 </div>
+
+<style lang="scss">
+  .image-wrapper{
+    height: 300px;
+    img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+</style>

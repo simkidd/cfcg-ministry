@@ -1,11 +1,15 @@
 ---
 import { Icon } from "astro-icon/components";
 import { bibleVerses } from "../data/verses.data";
+import { getImage } from "astro:assets";
+import Bg3 from "../assets/bg-img-03.jpg"
+
+const optBgImage = await getImage({ src: Bg3 });
 ---
 
 <div
   class="qoute padding--top padding--bottom bg-img"
-  style="background: url(assets/images/bg-img/03.jpg) rgba(0, 0, 0, .4);;"
+  style=`background: url('${optBgImage.src}') rgba(0, 0, 0, .75);`
 >
   <div class="container">
     <div class="qoute__slider swiper overflow-hidden">

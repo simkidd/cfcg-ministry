@@ -1,8 +1,40 @@
 ---
+import { Icon } from "astro-icon/components";
 
 ---
 
-<a href="#" class="scrollToTop">
-  <i class="fas fa-arrow-up"></i>
+<btn class="scrollToTop">
+  <Icon name="mdi:arrow-up" />
   <span class="pluse_1"></span><span class="pluse_2"></span>
-</a>
+</btn>
+
+<style lang="scss">
+  .show{
+    cursor: pointer;
+    bottom: 5%;
+  }
+</style>
+
+<script is:inline>
+  const scrollTopBtn = document.querySelector(".scrollToTop");
+
+  if (scrollTopBtn) {
+    const toggleShow = () => {
+      if (window.scrollY > 3000) {
+        scrollTopBtn.classList.add("show");
+      } else {
+        scrollTopBtn.classList.remove("show");
+      }
+    };
+    document.addEventListener("scroll", toggleShow);
+
+    const scrollToTop = () => {
+      window.scrollTo({
+        top: 0,
+        behavior: "smooth",
+      });
+    };
+
+    scrollTopBtn.addEventListener("click", scrollToTop);
+  }
+</script>

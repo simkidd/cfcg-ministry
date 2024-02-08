@@ -1481,7 +1481,7 @@ ul {
   position: fixed;
   bottom: -30%;
   right: 5%;
-  z-index: 9;
+  z-index: 10;
   width: 40px;
   height: 40px;
   line-height: 40px;
@@ -1494,11 +1494,11 @@ ul {
   -ms-border-radius: 100%;
   -o-border-radius: 100%;
   border-radius: 100%;
-  -webkit-transition: all 0.3s ease;
-  -moz-transition: all 0.3s ease;
-  -ms-transition: all 0.3s ease;
-  -o-transition: all 0.3s ease;
-  transition: all 0.3s ease;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+  transition: all 0.3s ease-in-out;
 }
 .scrollToTop i,
 .scrollToTop svg {
@@ -3668,11 +3668,11 @@ form textarea {
   border-color: #3b5998;
 }
 .social__list-twitter:hover a {
-  color: #55acee;
+  color: #000;
 }
 .social__list-twitter:hover a i,
 .social__list-twitter:hover a svg {
-  border-color: #55acee;
+  border-color: #000;
 }
 .social__list-linkedin:hover a {
   color: #007bb5;

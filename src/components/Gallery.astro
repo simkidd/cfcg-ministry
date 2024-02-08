@@ -1,6 +1,8 @@
 ---
-import { Image } from "astro:assets"
-import Image1 from "../assets/images/gallery/WhatsApp Image 2024-02-07 at 10.22.46.jpeg"
+import { Image } from "astro:assets";
+import Image1 from "../assets/images/gallery/WhatsApp Image 2024-02-07 at 10.22.46.jpeg";
+import Image2 from "../assets/images/gallery/WhatsApp Image 2024-02-07 at 10.22.55.jpeg";
+import { Icon } from "astro-icon/components";
 ---
 
 <div class="gallery padding--top padding--bottom bg-light" id="gallery">
@@ -14,18 +16,16 @@ import Image1 from "../assets/images/gallery/WhatsApp Image 2024-02-07 at 10.22.
           <div class="gallery__item">
             <div class="gallery__inner">
               <div class="gallery__thumb">
-                <Image
-                  src={Image1}
-                  alt="gallery-thumb"
-                  class="w-100"
-                />
+                <Image src={Image1} alt="gallery-thumb" class="w-100" />
               </div>
               <div class="gallery__content text-center">
-                <a
-                  href="assets/images/gallery/01.jpg"
+                <!-- <a
+                  href="../assets/images/gallery/WhatsApp Image 2024-02-07 at 10.22.46.jpeg"
                   data-rel="lightcase"
-                  class="gallery__icon"><i class="fas fa-plus"></i></a
+                  class="gallery__icon"
                 >
+                  <Icon name="mdi:plus" />
+                </a> -->
               </div>
             </div>
           </div>
@@ -34,18 +34,14 @@ import Image1 from "../assets/images/gallery/WhatsApp Image 2024-02-07 at 10.22.
           <div class="gallery__item">
             <div class="gallery__inner">
               <div class="gallery__thumb">
-                <Image
-                  src={Image1}
-                  alt="gallery-thumb"
-                  class="w-100"
-                />
+                <Image src={Image2} alt="gallery-thumb" class="w-100" />
               </div>
               <div class="gallery__content text-center">
-                <a
+                <!-- <a
                   href="assets/images/gallery/02.jpg"
                   data-rel="lightcase"
                   class="gallery__icon"><i class="fas fa-plus"></i></a
-                >
+                > -->
               </div>
             </div>
           </div>
@@ -54,11 +50,7 @@ import Image1 from "../assets/images/gallery/WhatsApp Image 2024-02-07 at 10.22.
           <div class="gallery__item">
             <div class="gallery__inner">
               <div class="gallery__thumb">
-                <Image
-                  src={Image1}
-                  alt="gallery-thumb"
-                  class="w-100"
-                />
+                <Image src={Image1} alt="gallery-thumb" class="w-100" />
               </div>
               <div class="gallery__content text-center">
                 <a
@@ -70,11 +62,49 @@ import Image1 from "../assets/images/gallery/WhatsApp Image 2024-02-07 at 10.22.
             </div>
           </div>
         </div>
-        
       </div>
       <div class="text-center mt-5">
-        <a href="/gallery" class="default-btn move-right"><span>View All</span></a>
+        <a href="/gallery" class="default-btn move-right"
+          ><span>View All</span></a
+        >
       </div>
     </div>
   </div>
 </div>
+
+<style lang="scss">
+  .gallery__thumb{
+    img{
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+</style>
+
+<link
+  rel="stylesheet"
+  href="https://cdnjs.cloudflare.com/ajax/libs/lightcase/2.5.0/css/lightcase.css"
+  integrity="sha512-UbNEgpFIqGkAbyvxoLpFgpnH+k/Y4ncOlcppPzxU7UGz9Zars4RAYdxrhLe48gd7wBVADz9vPiQawb11aK69Sw=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"
+/>
+
+<script
+  is:inline
+  src="https://cdnjs.cloudflare.com/ajax/libs/lightcase/2.5.0/js/lightcase.min.js"
+  integrity="sha512-i+A2/k3mB4TtIRp6fyk8Q+xzJqKusi0bvFgCIfDtdJT1tDEMqYvKo60q3bvp6LzGIeS6BahqN4AklwwxbdSaog=="
+  crossorigin="anonymous"
+  referrerpolicy="no-referrer"></script>
+
+<script
+  is:inline
+  src="https://code.jquery.com/jquery-3.7.1.min.js"
+  integrity="sha256-/JqT3SQfawRcv/BIHPThkBvs0OEvtFFmqPF/lYI/Cxo="
+  crossorigin="anonymous"></script>
+
+<script is:inline>
+  $("a").on("click", () => {
+    console.log("Button clicked!");
+  });
+</script>

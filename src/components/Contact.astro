@@ -90,14 +90,17 @@ import { Icon } from "astro-icon/components";
                 <div class="location__info-list">
                   <ul>
                     <li class="mb-3">
-                      <a href="tel:+2348125884223">
+                      <div class="d-flex">
                         <Icon
                           size={18}
                           name="mdi:phone"
                           class="me-2 text-primary"
                         />
-                        +234 812 588 4223
-                      </a>
+                        <div class="d-flex flex-column ">
+                          <a href="tel:+2348125884223"> +234 812 588 4223</a>
+                          <a href="tel:+2348065830072"> +234 806 583 0072</a>
+                        </div>
+                      </div>
                     </li>
                     <li class="mb-3">
                       <a href="mailto:campaignforchristglobal@gmail.com">
@@ -115,8 +118,8 @@ import { Icon } from "astro-icon/components";
                       </div>
                       <div class="location__info-right">
                         <p>
-                          No. 1 Ojiba Street off NTA Apara Link Road Mercy Land
-                          Port Harcourt
+                          No. 2 Charles Okomji Street off NTA Apara Link Road
+                          Mercy Land Port Harcourt
                         </p>
                       </div>
                     </li>
@@ -126,10 +129,9 @@ import { Icon } from "astro-icon/components";
                       </div>
                       <div class="location__info-right">
                         <ul>
-                          <li><b>Monday-Thursday :</b> 06:00 am - 09:00 pm</li>
-                          <li><b>Friday :</b> 10:30 am - 05:30 pm</li>
-                          <li><b>Saturday :</b> 10:30 am - 05:30 pm</li>
-                          <li><b>Sunday :</b> Closed</li>
+                          <li><b>Tuesday :</b> 10:00 am - 12:00 pm</li>
+                          <li><b>Saturdays :</b> 07:00 am - 08:30am</li>
+                          
                         </ul>
                       </div>
                     </li>
@@ -150,7 +152,7 @@ import { Icon } from "astro-icon/components";
     <div class="social__area">
       <ul class="social__list">
         <li class="social__list-facebook">
-          <a href="#">
+          <a href="https://facebook.com/campaign4Jesu" target="_blank">
             <Icon name="ri:facebook-fill" class="social-icon" />
             <span>facebook</span>
           </a>

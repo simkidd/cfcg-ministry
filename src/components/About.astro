@@ -1,13 +1,12 @@
 ---
-import { Icon } from "astro-icon/components";
 ---
 
 <div class="about padding--top padding--bottom">
   <div class="container">
     <div class="row g-4">
-      <div class="col-lg-4 col-12">
+      <div class="col-lg-5 col-12">
         <div class="about__thumbpart">
-          <h3 class="mb-4">About the Ministry</h3>
+          <h1 class="mb-4">About the Ministry</h1>
           <p>
             <strong>Campaign For Christ Global Ministry</strong>, is an Evangelical Bible
             Ministry, Orchestrated, divinely ordained instructed and directed by
@@ -21,7 +20,7 @@ import { Icon } from "astro-icon/components";
           </div>
         </div>
       </div>
-      <div class="col-lg-8 col-12">
+      <div class="col-lg-7 col-12">
         <div class="about__contentpart ms-lg-4 ps-lg-5 border-start">
           <div class="section__header">
             <h2>Mission</h2>
@@ -40,14 +39,18 @@ import { Icon } from "astro-icon/components";
           </div>
         </div>
       </div>
-      <div class="col-lg-8 col-12">
-        <p></p>
-      </div>
+      
     </div>
   </div>
 </div>
 
 <style lang="scss">
+  h1{
+    font-size: 48px !important;
+    @media screen and (max-width:768px) {
+      font-size: 43.7px !important;
+    }
+  }
   ul {
     padding-left: 1rem;
     li{

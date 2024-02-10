@@ -1,2 +1,2 @@
-export const SITE_TITLE = "CFCGM";
-export const SITE_DESCRIPTION = "Campaign For Christ Global Ministry";
+export const SITE_TITLE = "Campaign For Christ Global Ministry - CFGCM";
+export const SITE_DESCRIPTION = "Campaign For Christ Global Ministry, is an Evangelical Bible Ministry, Orchestrated, divinely ordained instructed and directed by the hand of the Lord of host";

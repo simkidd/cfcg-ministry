@@ -1,17 +1,19 @@
 ---
+import ImageGallery from "../components/ImageGallery.tsx";
 import PageHeader from "../components/PageHeader.astro";
+import { galleryImages } from "../data/gallery.data";
 import MainLayout from "../layouts/MainLayout.astro";
-import { SITE_TITLE } from "../utils/constants";
-import GalleryComp from "../components/GalleryComp.tsx";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../utils/constants";
 
 const pageTitle = "Gallery";
 ---
 
-<MainLayout title={`${pageTitle} | ${SITE_TITLE}`} description="">
+<MainLayout title={`${pageTitle} | ${SITE_TITLE}`} description={SITE_DESCRIPTION}>
   <PageHeader title={pageTitle} />
   <div class="gallery padding--top padding--bottom bg-light">
     <div class="container">
-      <GalleryComp client:load />
+      <!-- <GalleryComp client:load /> -->
+      <ImageGallery client:load images={galleryImages} />
     </div>
   </div>
 </MainLayout>

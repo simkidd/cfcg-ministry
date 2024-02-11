@@ -6,13 +6,22 @@
     grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
     grid-auto-rows: 250px;
     grid-auto-flow: dense;
-  }
 
-  .grid-item {
-    width: 100%;
-    height: 100%;
-    object-fit: cover;
-    cursor: pointer;
+    .image-grid-wrap {
+      overflow: hidden;
+      &:hover{
+        img{
+          transform: scale(1.05);
+        }
+      }
+
+      .grid-item {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+        cursor: pointer;
+      }
+    }
   }
 
   .modal {
@@ -20,21 +29,49 @@
     top: 0;
     left: 0;
     width: 100%;
-    height: 100%;
+    height: 100vh;
     background-color: rgba(0, 0, 0, 0.904);
     display: flex;
     justify-content: center;
     align-items: center;
-    padding: 3rem;
+    padding: 2rem;
   }
 
   .modal-content {
     position: relative;
-    width: fit-content;
+    width: 100%;
     height: 100%;
     // overflow: hidden;
     background: transparent;
     border: 0;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+
+    .image-wrap {
+      height: calc(100% - 30px);
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: contain;
+      }
+
+    }
+
+    .image-info {
+      height: 30px;
+      width: 100%;
+
+      @media screen and (min-width: 768px) {
+        max-width: 70%;
+      }
+
+      p {
+        text-wrap: wrap;
+      }
+    }
   }
 
   .close {
@@ -59,8 +96,7 @@
     color: #fff;
     font-size: 20px;
     cursor: pointer;
-    z-index: 1000;
-    /* Ensure navigation buttons are on top of modal content */
+    z-index: 10;
   }
 
   .previous,
@@ -87,12 +123,5 @@
     @media screen and (min-width: 768px) {
       right: 20px;
     }
-  }
-
-  .modal img {
-    max-width: 100%;
-    max-height: 100%;
-    display: block;
-    margin: auto;
   }
 }

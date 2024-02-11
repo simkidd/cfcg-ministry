@@ -1,6 +1,6 @@
 import React, { useState } from "react";
-import "../styles/custom.scss";
 import type { Gallery } from "../data/gallery.data";
+import "../styles/custom.scss";
 
 const ImageGallery: React.FC<{ images: Gallery[] }> = ({ images }) => {
   const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(
@@ -39,13 +39,14 @@ const ImageGallery: React.FC<{ images: Gallery[] }> = ({ images }) => {
     <div className="image-gallery">
       <div className="image-grid">
         {images.map((image, i) => (
-          <img
-            key={i}
-            src={image.image.src}
-            alt={`Thumbnail ${i + 1}`}
-            onClick={() => handleClick(i)}
-            className="grid-item"
-          />
+          <div className="image-grid-wrap" key={i}>
+            <img
+              src={image.image.src}
+              alt={image.desc}
+              onClick={() => handleClick(i)}
+              className="grid-item"
+            />
+          </div>
         ))}
       </div>
 
@@ -58,10 +59,15 @@ const ImageGallery: React.FC<{ images: Gallery[] }> = ({ images }) => {
             &#10094;
           </span>
           <div className="modal-content">
-            <img
-              src={images[selectedImageIndex].image.src}
-              alt={`Image ${selectedImageIndex + 1}`}
-            />
+            <div className="image-wrap">
+              <img
+                src={images[selectedImageIndex].image.src}
+                alt={images[selectedImageIndex].desc}
+              />
+            </div>
+            <div className="image-info mt-auto">
+              <p className="mb-0">{images[selectedImageIndex].desc}</p>
+            </div>
           </div>
           <span className="nav next" onClick={handleNext}>
             &#10095;

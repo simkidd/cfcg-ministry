@@ -1,4 +1,4 @@
-import { defineConfig } from "astro/config";
+import { defineConfig, passthroughImageService } from "astro/config";
 import icon from "astro-icon";
 import vercel from "@astrojs/vercel/serverless";
 
@@ -9,5 +9,8 @@ export default defineConfig({
   site: "https://example.com",
   integrations: [icon(), react()],
   output: "hybrid",
-  adapter: vercel()
+  adapter: vercel(),
+  image: {
+    service: passthroughImageService(),
+  },
 });

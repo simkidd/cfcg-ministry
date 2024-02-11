@@ -1,8 +1,12 @@
 ---
+import { getImage } from "astro:assets";
+import Bg from '../assets/images/bg/3175109.jpg'
+
+const optBgImage = await getImage({ src: Bg });
 
 ---
 
-<div class="eventtime">
+<div class="eventtime" style={`background-image: url('${optBgImage.src}')`}>
   <div class="container">
     <div class="eventtime__area">
       <div class="eventtime__left">
@@ -37,3 +41,11 @@
     </div>
   </div>
 </div>
+
+<style lang="scss">
+  .eventtime{
+    background-repeat: no-repeat !important;
+    background-size: cover !important;
+    background-attachment: fixed !important;
+  }
+</style>

@@ -1,7 +1,6 @@
 ---
-import { Image } from "astro:assets";
-import { events } from "../data/events.data";
 import { Icon } from "astro-icon/components";
+import { events } from "../data/events.data";
 ---
 
 <div class="event padding--top padding--bottom">
@@ -17,7 +16,7 @@ import { Icon } from "astro-icon/components";
     <div class="section__wrapper">
       <div class="row g-4 justify-content-center">
         {
-          events.map(({ title, image, time, venue, content }) => {
+          events.map(({ title, image }) => {
             return (
               <div class="col-lg-4 col-sm-6 col-12">
                 <div class="event__item">

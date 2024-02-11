@@ -1,43 +1,71 @@
 import React, { useState } from "react";
 import "../styles/custom.scss";
+import type { Gallery } from "../data/gallery.data";
 
-const ImageGallery: React.FC<{ images: any[] }> = ({ images }) => {
-  const [selectedImage, setSelectedImage] = useState(null);
+const ImageGallery: React.FC<{ images: Gallery[] }> = ({ images }) => {
+  const [selectedImageIndex, setSelectedImageIndex] = useState<number | null>(
+    null
+  );
 
-  const handleClick = (image: any) => {
-    setSelectedImage(image.image.src);
+  const handleClick = (index: number) => {
+    setSelectedImageIndex(index);
   };
 
   const handleCloseModal = () => {
-    setSelectedImage(null);
+    setSelectedImageIndex(null);
+  };
+
+  const handleNext = () => {
+    setSelectedImageIndex((prevIndex) => {
+      if (prevIndex === null || prevIndex === images.length - 1) {
+        return 0;
+      } else {
+        return prevIndex + 1;
+      }
+    });
+  };
+
+  const handlePrevious = () => {
+    setSelectedImageIndex((prevIndex) => {
+      if (prevIndex === null || prevIndex === 0) {
+        return images.length - 1;
+      } else {
+        return prevIndex - 1;
+      }
+    });
   };
 
   return (
     <div className="image-gallery">
       <div className="image-grid">
-        {images.map((image: any, i: number) => (
+        {images.map((image, i) => (
           <img
             key={i}
             src={image.image.src}
             alt={`Thumbnail ${i + 1}`}
-            onClick={() => handleClick(image)}
+            onClick={() => handleClick(i)}
             className="grid-item"
           />
         ))}
       </div>
-      
-      {selectedImage && (
+
+      {selectedImageIndex !== null && (
         <div className="modal">
-          <span
-            className="close d-flex align-items-center justify-content-center"
-            onClick={handleCloseModal}
-          >
+          <span className="close" onClick={handleCloseModal}>
             &times;
           </span>
+          <span className="nav previous" onClick={handlePrevious}>
+            &#10094;
+          </span>
           <div className="modal-content">
-            <img src={selectedImage} alt="Selected" />
-            <span>{selectedImage}</span>
+            <img
+              src={images[selectedImageIndex].image.src}
+              alt={`Image ${selectedImageIndex + 1}`}
+            />
           </div>
+          <span className="nav next" onClick={handleNext}>
+            &#10095;
+          </span>
         </div>
       )}
     </div>

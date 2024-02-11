@@ -17,7 +17,13 @@ import Img16 from "../assets/images/gallery/WhatsApp Image 2024-02-07 at 10.27.5
 import Img17 from "../assets/images/gallery/WhatsApp Image 2024-02-07 at 10.27.52.jpeg";
 import Img18 from "../assets/images/gallery/WhatsApp Image 2024-02-07 at 10.27.54.jpeg";
 
-export const galleryImages = [
+export interface Gallery {
+  id: string;
+  image: ImageMetadata;
+  alt: string;
+}
+
+export const galleryImages: Gallery[] = [
   { id: "1", image: Img1, alt: "" },
   { id: "2", image: Img2, alt: "" },
   { id: "3", image: Img3, alt: "" },

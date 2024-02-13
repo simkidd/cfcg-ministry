@@ -8,10 +8,7 @@ const optBgImage1 = await getImage({ src: Banner1 });
 <div class="banner__slider swiper banner-style2 overflow-hidden">
   <div class="swiper-wrapper">
     <div class="swiper-slide">
-      <div
-        class="banner"
-        style={`background-image: url('${optBgImage1.src}')`}
-      >
+      <div class="banner" style={`background-image: url('${optBgImage1.src}')`}>
         <div class="container">
           <div
             class="banner__content hero mx-auto d-flex flex-column align-items-center"
@@ -42,6 +39,10 @@ const optBgImage1 = await getImage({ src: Banner1 });
       h5 {
         color: #fff;
         font-family: "Roboto", sans-serif;
+      }
+      h1,
+      h5 {
+        text-shadow: 1px 1px 2px black;
       }
     }
   }

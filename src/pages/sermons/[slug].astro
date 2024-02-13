@@ -1,0 +1,59 @@
+---
+import { Icon } from "astro-icon/components";
+import PageHeader from "../../components/PageHeader.astro";
+import { sermonsList } from "../../data/sermon.data";
+import MainLayout from "../../layouts/MainLayout.astro";
+
+export async function getStaticPaths() {
+  return sermonsList.map((sermon) => ({
+    params: {
+      slug: sermon.slug,
+    },
+    props: { sermon },
+  }));
+}
+
+const { sermon } = Astro.props;
+---
+
+<MainLayout title={sermon.title} description="">
+  <PageHeader title={sermon.title} />
+  <div class="sermon sermon-single padding--top padding--bottom bg-light">
+    <div class="container">
+      <div class="section__wrapper">
+        <div class="row g-4">
+          <div class="col-lg-9 col-12">
+            <div class="sermon__item">
+              <div class="sermon__inner">
+                <div class="sermon__thumb">
+                  <div>
+                    <iframe
+                      height="480"
+                      width="100%"
+                      src={sermon.video}
+                    >
+                    </iframe>
+                  </div>
+                  <div class="sermon__thumb-metapost">
+                    <ul class="sermon__content-metapost">
+                      <li><Icon name="mdi:calendar" /> 10 Jan 2022</li>
+                      <li><Icon name="mdi:user" /> {sermon.speaker}</li>
+                    </ul>
+                  </div>
+                </div>
+                <div class="sermon__content">
+                  <h3>
+                    {sermon.title}
+                  </h3>
+                  <p>
+                    {sermon.content}
+                  </p>
+                </div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</MainLayout>

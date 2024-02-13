@@ -20,26 +20,26 @@ import Img18 from "../assets/images/gallery/WhatsApp Image 2024-02-07 at 10.27.5
 export interface Gallery {
   id: string;
   image: ImageMetadata;
-  alt: string;
+  desc: string;
 }
 
 export const galleryImages: Gallery[] = [
-  { id: "1", image: Img1, alt: "" },
-  { id: "2", image: Img2, alt: "" },
-  { id: "3", image: Img3, alt: "" },
-  { id: "4", image: Img4, alt: "" },
-  { id: "5", image: Img5, alt: "" },
-  { id: "6", image: Img6, alt: "" },
-  { id: "7", image: Img7, alt: "" },
-  { id: "8", image: Img8, alt: "" },
-  { id: "9", image: Img9, alt: "" },
-  { id: "10", image: Img10, alt: "" },
-  { id: "11", image: Img11, alt: "" },
-  { id: "12", image: Img12, alt: "" },
-  { id: "13", image: Img13, alt: "" },
-  { id: "14", image: Img14, alt: "" },
-  { id: "15", image: Img15, alt: "" },
-  { id: "16", image: Img16, alt: "" },
-  { id: "17", image: Img17, alt: "" },
-  { id: "18", image: Img18, alt: "" },
+  { id: "1", image: Img1, desc: "" },
+  { id: "2", image: Img2, desc: "" },
+  { id: "3", image: Img3, desc: "" },
+  { id: "4", image: Img4, desc: "" },
+  { id: "5", image: Img5, desc: "" },
+  { id: "6", image: Img6, desc: "" },
+  { id: "7", image: Img7, desc: "" },
+  { id: "8", image: Img8, desc: "" },
+  { id: "9", image: Img9, desc: "" },
+  { id: "10", image: Img10, desc: "" },
+  { id: "11", image: Img11, desc: "" },
+  { id: "12", image: Img12, desc: "" },
+  { id: "13", image: Img13, desc: "" },
+  { id: "14", image: Img14, desc: "" },
+  { id: "15", image: Img15, desc: "" },
+  { id: "16", image: Img16, desc: "" },
+  { id: "17", image: Img17, desc: "" },
+  { id: "18", image: Img18, desc: "" },
 ];

@@ -13,7 +13,7 @@ const navlist: Menu[] = [
   { name: "Home", href: "/" },
   { name: "Events", href: "/#events" },
   { name: "Gallery", href: "/gallery" },
-  // { name: "Sermons", href: "/#sermons" },
+  { name: "Sermons", href: "/sermons" },
   { name: "Contact Us", href: "/#contact-us" },
 ];
 ---
@@ -33,7 +33,10 @@ const navlist: Menu[] = [
                   </a>
                 </li>
                 <li>
-                  <a href="mailto:campaignforchristglobal@gmail.com" class="f-15">
+                  <a
+                    href="mailto:campaignforchristglobal@gmail.com"
+                    class="f-15"
+                  >
                     <Icon size={18} name="mdi:envelope" class="me-2" />
                     campaignforchristglobal@gmail.com
                   </a>
@@ -54,7 +57,10 @@ const navlist: Menu[] = [
                 <div class="header__top-social ms-md-auto">
                   <ul class="gap-2">
                     <li>
-                      <a href="https://facebook.com/campaign4Jesu" target="_blank">
+                      <a
+                        href="https://facebook.com/campaign4Jesu"
+                        target="_blank"
+                      >
                         <Icon size={18} name="ri:facebook-fill" class="me-2" />
                       </a>
                     </li>
@@ -87,9 +93,9 @@ const navlist: Menu[] = [
               </a>
             </div>
           </div>
-          <div class="header__bar ">
+          <div class="header__bar">
             <button
-              class="navbar-toggler text-white border-0 "
+              class="navbar-toggler text-white border-0"
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#menubar2"
@@ -100,7 +106,7 @@ const navlist: Menu[] = [
               <Icon name="heroicons:information-circle" size={28} />
             </button>
             <button
-              class="navbar-toggler text-white border-white "
+              class="navbar-toggler text-white border-white"
               type="button"
               data-bs-toggle="collapse"
               data-bs-target="#menubar"
@@ -122,7 +128,7 @@ const navlist: Menu[] = [
                   ))
                 }
               </ul>
-              <a href="#" class="default-btn">
+              <a href="/donation-causes" class="default-btn">
                 <span>
                   Donate Now
                   <Icon name="mdi:heart" />
@@ -137,14 +143,23 @@ const navlist: Menu[] = [
 </header>
 
 <style lang="scss">
-  .f-15{
+  .f-15 {
     font-size: 15px !important;
   }
-  .active {
-    @media screen and (min-width: 768px) {
-      text-decoration: none !important;
-      color: #0c5bcd;
+
+  .header__bottom{
+    a{
+      @media (max-width: 768px) {
+        color: #fff !important;
+      }
     }
+    .active {
+      @media screen and (min-width: 768px) {
+        text-decoration: none !important;
+        color: #0c5bcd;
+      }
+    }
+
   }
   .logo-wrap {
     width: 50px;

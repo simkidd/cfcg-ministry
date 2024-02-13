@@ -1,0 +1,64 @@
+---
+import MainLayout from "../../layouts/MainLayout.astro";
+import PageHeader from "../../components/PageHeader.astro";
+import { SITE_DESCRIPTION, SITE_TITLE } from "../../utils/constants";
+import SocialLinks from "../../components/SocialLinks.astro";
+import { Icon } from "astro-icon/components";
+import { sermonsList } from "../../data/sermon.data";
+import { Image } from "astro:assets";
+import Logo from "../../assets/cfcgm.jpeg"
+
+const pageTitle = "Sermons";
+---
+
+<MainLayout
+  title={`${pageTitle} | ${SITE_TITLE}`}
+  description={SITE_DESCRIPTION}
+>
+  <PageHeader title={pageTitle} />
+  <div class="sermon padding--top padding--bottom bg-light">
+    <div class="container">
+      <div class="section__wrapper">
+        <div class="row g-4">
+          {
+            sermonsList.map(({ title, date, speaker,slug }) => (
+              <div class="col-lg-6 col-12">
+                <div class="sermon__item">
+                  <div class="sermon__inner">
+                    <div class="sermon__thumb">
+                      <Image
+                        src={Logo}
+                        alt="sermon thumb"
+                      />
+                    </div>
+                    <div class="sermon__content">
+                      <a href={`/sermons/${slug}`}>
+                        <h6>{title}</h6>
+                      </a>
+                      <ul class="sermon__content-metapost">
+                        <li>
+                          <Icon name="mdi:calendar" /> {date}
+                        </li>
+                        <li>
+                          <Icon name="mdi:user" /> {speaker}
+                        </li>
+                      </ul>
+                      <ul class="sermon__content-social">
+                        <li>
+                          <a href="">
+                            <Icon name="mdi:youtube" />
+                          </a>
+                        </li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+              </div>
+            ))
+          }
+        </div>
+      </div>
+    </div>
+  </div>
+  <SocialLinks />
+</MainLayout>

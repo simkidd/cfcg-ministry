@@ -1,75 +1,49 @@
 ---
-import {getImage} from "astro:assets";
-import Banner1 from "../assets/images/banner/01.jpg";
-import Banner2 from "../assets/images/banner/02.jpg";
-import Banner3 from "../assets/images/banner/03.jpg";
+import { getImage } from "astro:assets";
+import Banner1 from "../assets/images/banner/pexels-luis-quintero-2014775.jpg";
 
 const optBgImage1 = await getImage({ src: Banner1 });
-const optBgImage2 = await getImage({ src: Banner2 });
-const optBgImage3 = await getImage({ src: Banner3 });
 ---
 
 <div class="banner__slider swiper banner-style2 overflow-hidden">
   <div class="swiper-wrapper">
     <div class="swiper-slide">
-      <div
-        class="banner"
-        style={`background-image: url('${optBgImage1.src}')`}
-      >
+      <div class="banner" style={`background-image: url('${optBgImage1.src}')`}>
         <div class="container">
-          <div class="banner__content ms-lg-auto">
-            <h2>We Believe In Huminity</h2>
-            <p>
-              Enthusiastically underwhelm quality benefits rather than
-              professional "outside the box" thinking. Distinctively network
-              highly efficient leadership skills
-            </p>
-            <a href="#" class="default-btn move-right"
-              ><span>GET HELP NOW</span></a
-            >
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="swiper-slide">
-      <div
-        class="banner"
-        style={`background-image: url('${optBgImage2.src}')`}
-      >
-        <div class="container">
-          <div class="banner__content">
-            <h2>A Powerful Religion Theme</h2>
-            <p>
-              Enthusiastically underwhelm quality benefits rather than
-              professional "outside the box" thinking. Distinctively network
-              highly efficient leadership skills
-            </p>
-            <a href="#" class="default-btn move-right"
-              ><span>GET HELP NOW</span></a
-            >
-          </div>
-        </div>
-      </div>
-    </div>
-    <div class="swiper-slide">
-      <div
-        class="banner"
-        style={`background-image: url('${optBgImage3.src}')`}
-      >
-        <div class="container">
-          <div class="banner__content ms-lg-auto">
-            <h2>It"S Useless To Lecture</h2>
-            <p>
-              Enthusiastically underwhelm quality benefits rather than
-              professional "outside the box" thinking. Distinctively network
-              highly efficient leadership skills
-            </p>
-            <a href="#" class="default-btn move-right"
-              ><span>GET HELP NOW</span></a
-            >
+          <div
+            class="banner__content hero mx-auto d-flex flex-column align-items-center"
+          >
+            <h5 class="text-center">
+              Welcome to Campaign for Christ Global Ministry
+            </h5>
+            <h1 class="text-center">Worship with our Church Family</h1>
+            <a href="#" class="default-btn move-right"><span>JOIN US</span></a>
           </div>
         </div>
       </div>
     </div>
   </div>
 </div>
+
+<style lang="scss">
+  .banner {
+    .hero {
+      @media (min-width: 992px) {
+        max-width: 70%;
+      }
+      h1 {
+        font-weight: 900;
+        color: #fff !important;
+        font-family: "Roboto", sans-serif;
+      }
+      h5 {
+        color: #fff;
+        font-family: "Roboto", sans-serif;
+      }
+      h1,
+      h5 {
+        text-shadow: 1px 1px 2px black;
+      }
+    }
+  }
+</style>

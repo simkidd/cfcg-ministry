@@ -5,6 +5,8 @@ import { SITE_DESCRIPTION, SITE_TITLE } from "../../utils/constants";
 import SocialLinks from "../../components/SocialLinks.astro";
 import { Icon } from "astro-icon/components";
 import { sermonsList } from "../../data/sermon.data";
+import { Image } from "astro:assets";
+import Logo from "../../assets/cfcgm.jpeg"
 
 const pageTitle = "Sermons";
 ---
@@ -24,8 +26,8 @@ const pageTitle = "Sermons";
                 <div class="sermon__item">
                   <div class="sermon__inner">
                     <div class="sermon__thumb">
-                      <img
-                        src="assets/images/sermon/01.jpg"
+                      <Image
+                        src={Logo}
                         alt="sermon thumb"
                       />
                     </div>

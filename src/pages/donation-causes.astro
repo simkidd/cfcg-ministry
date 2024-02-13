@@ -14,7 +14,7 @@ const pageTitle = "Donation Causes";
   description={SITE_DESCRIPTION}
 >
   <PageHeader title={pageTitle} />
-  <div class="donation-page">
+  <div class="donation-page py-5">
     <div class="container">
       <div class="donation-content">
         <h2 class="fw-bold text-secondary text-center m-0">
@@ -27,21 +27,24 @@ const pageTitle = "Donation Causes";
                 <div class="img-wrapper">
                   <Image src={DonateImg} alt="donate-imd" class="branch-img" />
                 </div>
-                <div class="donate-content">
-                  <h3 class="donate-heading">
+                <div class="donate-content py-4">
+                  <h4 class="donate-heading">
                     Your Generousity is Making a Difference
-                  </h3>
+                  </h4>
                   <div class="donate-text">
                     <p>
                       We are happy to get any support from members of this
                       assembly and the community at large!
-                    </p><p>
+                    </p>
+                    <p>
                       Thank you so much for staying with us, and for all your
                       help, Donations
                     </p>
                   </div>
                   <div class="price-donate">
-                    <a href="#" class="default-btn move-right"><span>Donate</span></a>
+                    <a href="#" class="default-btn move-right"
+                      ><span>Donate</span></a
+                    >
                   </div>
                 </div>
               </div>
@@ -55,42 +58,38 @@ const pageTitle = "Donation Causes";
 </MainLayout>
 
 <style lang="scss">
+  .donation-page {
+    background: #f8f9fa;
+  }
   .donate {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(auto-fit, minmax(0, 1fr));
+    grid-auto-rows: auto;
+    grid-auto-flow: dense;
     margin-block: 2rem;
-    font-family: "Roboto", sans-serif;
     gap: 2rem;
-    .donation-content {
+    background: #fff;
+    @media (max-width: 768px) {
+      grid-template-columns: repeat(auto-fit, minmax(100%, 1fr));
+    }
+    .img-wrapper {
+      overflow: hidden;
+      width: 100%;
+
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+    .donate-content {
+      width: 100%;
       display: flex;
       flex-direction: column;
+      justify-content: center;
       gap: 1rem;
-      .img-wrapper {
-        overflow: hidden;
-
-        img {
-          width: 100%;
-          height: 100%;
-          object-fit: cover;
-        }
-      }
-      .donate-content {
-        width: 100%;
-        display: flex;
-        justify-content: center;
-        gap: 1rem;
-        background: #c4c4c4;
-        .donate-heading {
-        }
-        .donate-text {
-        }
-        .donate-price {
-          display: flex;
-          align-items: center;
-          gap: 4rem;
-          margin-top: 1rem;
-
-        }
+      h4 {
+        font-family: "Roboto", sans-serif;
       }
     }
   }

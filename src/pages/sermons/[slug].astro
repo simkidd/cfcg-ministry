@@ -35,9 +35,9 @@ const { sermon } = Astro.props;
                     </iframe>
                   </div>
                   <div class="sermon__thumb-metapost">
-                    <ul class="sermon__content-metapost">
+                    <ul class="sermon__content-metapost d-flex justify-content-between w-100">
                       <li><Icon name="mdi:calendar" /> 10 Jan 2022</li>
-                      <li><Icon name="mdi:user" /> {sermon.speaker}</li>
+                      <li><Icon name="mdi:user" /><b>Speaker:</b> {sermon.speaker}</li>
                     </ul>
                   </div>
                 </div>
